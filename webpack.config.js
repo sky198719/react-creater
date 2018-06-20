@@ -47,25 +47,25 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({  
-      filename: __dirname + '/dist/index.html',  
-      template: __dirname + "/src/template/index/index.html",  
+      filename: __dirname + '/dist/index.html',
+      template: __dirname + '/src/template/index/index.html',
       chunks: ['index'],
-    }),  
+    }),
     new HtmlWebpackPlugin({  
-      filename: __dirname + '/dist/list.html',  
-      template: __dirname + "/src/template/list/index.html",  
+      filename: __dirname + '/dist/list.html',
+      template: __dirname + '/src/template/list/index.html',
       chunks: ['list'],
-    }),  
+    }),
     new HtmlWebpackPlugin({  
-      filename: __dirname + '/dist/form.html',  
-      template: __dirname + "/src/template/form/index.html",  
+      filename: __dirname + '/dist/form.html',
+      template: __dirname + '/src/template/form/index.html',
       chunks: ['form'],
-    }), 
+    }),
     new CleanWebpackPlugin(  
       ['dist/*', 'dist/*',],
-      {  
-        root: __dirname, 
-        verbose: true,  
+      {
+        root: __dirname,
+        verbose: true,
         dry: false
       }  
     )  
