@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './../header/views/index.js';
-import Footer from './../footer/views/index.js';
+import Header from './../common/header/views/index.js';
+import Footer from './../common/footer/views/index.js';
 import List from './views/index.js'
 
 ReactDOM.render(
@@ -14,6 +14,6 @@ ReactDOM.render(
 	),
 	document.getElementById('list'),
 	function(){
-		console.log('加载成功')
+		console.log('列表页加载成功')
 	}
 )

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {HashRouter,Route} from 'react-router-dom'
-import Header from './../header/views/index.js';
-import Footer from './../footer/views/index.js';
+import Header from './../common/header/views/index.js';
+import Footer from './../common/footer/views/index.js';
 import Formlist from './views/formlist/index.js';
 import Formfamily from './views/formfamily/index.js';
 import Formwork from './views/formwork/index.js';
@@ -25,6 +25,6 @@ ReactDOM.render(
 	),
 	document.getElementById('form'),
 	function(){
-		console.log('加载成功')
+		console.log('表单页加载成功')
 	}
 )

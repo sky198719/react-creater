@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');  
-const ExtractTextPlugin = require("extract-text-webpack-plugin");  
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
@@ -50,7 +49,7 @@ module.exports = {
     new HtmlWebpackPlugin({  
       filename: __dirname + '/dist/index.html',  
       template: __dirname + "/src/template/index/index.html",  
-      chunks: ['index'],  
+      chunks: ['index'],
     }),  
     new HtmlWebpackPlugin({  
       filename: __dirname + '/dist/list.html',  

@@ -10,17 +10,17 @@ class Header extends React.Component{
 				{
 					"title" : "首页",
 					"id" : "1",
-					"url" : "/index.html"
+					"url" : "index.html"
 				},
 				{
 					"title" : "列表页",
 					"id" : "2",
-					"url" : "/list.html"
+					"url" : "list.html"
 				},
 				{
 					"title" : "表单页",
 					"id" : "3",
-					"url" : "/form.html"
+					"url" : "form.html"
 				},
 			],
 			"currentid" : ''
@@ -43,7 +43,7 @@ class Header extends React.Component{
 		let style = ''
 		this.state.data.forEach(function(item,index){
 			style = that.state.currentid == item.id ? 'current' : ''
-			dataArry.push(<li key={index} id={item.id} className={style} onMouseEnter={(e) => that.handleMouseenter(e)} onMouseLeave={(e) => that.handleMouseleave(e)}><a href={item.url}>{item.title}</a></li>)
+			dataArry.push(<li key={index}><a id={item.id} className={style} href={item.url} onMouseEnter={(e) => that.handleMouseenter(e)} onMouseLeave={(e) => that.handleMouseleave(e)}>{item.title}</a></li>)
 		})
 		return(
 			<div>

@@ -11,7 +11,7 @@ class Formfamily extends React.Component{
 	}
 	render(){
 		return(
-			<div className="formfamily">
+			<div className="formfamily" id="listCon" value="1">
 				<label>家庭信息：</label><input type="text" />
 			</div>
 		)
