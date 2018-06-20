@@ -11,7 +11,7 @@ ReactDOM.render(
 	(
 		<div>
 			<Header />
-			<div id="mainCon" value="3">
+			<div className="list" id="mainCon" value="3">
 				<HashRouter>
 					<Formlist>
 						<Route exact path="/" component={Formfamily} />

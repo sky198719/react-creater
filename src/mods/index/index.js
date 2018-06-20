@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './../common/header/views/index.js';
 import Footer from './../common/footer/views/index.js';
-import Index from './views/index.js'
+import Index from './views/home/index.js'
 
 ReactDOM.render(
 	(
