@@ -5,7 +5,7 @@ const initState = {
 
 export function alertboxRe(state = initState.classname,action){
     switch(action.type){
-        case "BOX_STATE":
+        case "BOX_STATE" :
             return {
                 classname : action.classname
             }
