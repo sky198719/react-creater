@@ -1,6 +1,13 @@
-export const alertboxAct = (style) => {
+export const alertboxAct = (classname) => {
     return {
         type : 'BOX_STATE',
-        style
+        classname
     }
+}
+
+export const alertboxBg = (background) => {
+	return {
+		type : 'BOX_BG',
+		background
+	}
 }

@@ -24,7 +24,7 @@ class Index extends React.Component{
 
 function mapStateToProps(state){
 	return{
-		style : state.alertboxRe.style
+		classname : state.alertboxRe.classname
 	}
 }
 

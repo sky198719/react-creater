@@ -1,13 +1,26 @@
 const initState = {
-    style : 'alertbox'
-};
-export default function alertboxRe(state = initState, action) {
-    switch (action.type) {
+    classname : 'alertbox',
+    background : '#eeeeee'
+}
+
+export function alertboxRe(state = initState.classname,action){
+    switch(action.type){
         case "BOX_STATE":
             return {
-                style : action.style
+                classname : action.classname
             }
         default : 
-            return state;
+            return state
     }
+}
+
+export function alertboxCbg(state = initState.background,action){
+	switch(action.type){
+		case "BOX_BG" :
+			return{
+				background : action.background
+			}
+		default :
+			return state
+	}
 }

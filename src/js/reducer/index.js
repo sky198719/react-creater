@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
-import alertboxRe from './../reducer/alertbox/index.js';
+import {alertboxRe,alertboxCbg} from './../reducer/alertbox/index.js';
 
 const rootReducer = combineReducers({
-	alertboxRe
+	alertboxRe,alertboxCbg
 })
 
 export default rootReducer
