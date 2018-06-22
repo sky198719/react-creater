@@ -5,6 +5,9 @@ import {alertboxAct,alertboxBg} from './../../../js/action/alertbox/index.js';
 import less from './index.less';
 
 class Alertbox extends React.Component{
+	componentDidMount(){
+		this.props.dispatch(alertboxAct('alertbox'))
+	}
 	handleClick(){
 		this.props.dispatch(alertboxAct('alertbox'))
 	}

@@ -9,7 +9,7 @@ export function alertboxRe(state = initState.classname,action){
             return {
                 classname : action.classname
             }
-        default : 
+        default :
             return state
     }
 }
