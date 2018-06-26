@@ -1,0 +1,12 @@
+{
+	"resultCode" : 0,
+	"message" : "系统通过",
+	"data" : {
+		"code" : 0,
+		"msg" : "成功",
+		"data" : {
+			"loginState" : true,
+			"loginMsg" : "登录成功"
+		}
+	}
+}

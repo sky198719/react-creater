@@ -1,6 +1,7 @@
 const initState = {
     classname : 'alertbox',
-    background : '#eeeeee'
+    background : '#eeeeee',
+    message : '你是码农吗'
 }
 
 export function alertboxRe(state = initState.classname,action){
@@ -17,10 +18,29 @@ export function alertboxRe(state = initState.classname,action){
 export function alertboxCbg(state = initState.background,action){
 	switch(action.type){
 		case "BOX_BG" :
-			return{
+			return {
 				background : action.background
 			}
 		default :
 			return state
 	}
+}
+
+export function alertboxCmsg(state = initState.message,action){
+    switch(action.type){
+        case "BOX_MESSAGE" :
+            return {
+                message : action.message
+            }
+        case "BOX_INFO" :
+            return {
+                message : action.message
+            }
+        case "BOX_RE" :
+            return {
+                message : '你猜'
+            }
+        default : 
+            return state
+    }
 }

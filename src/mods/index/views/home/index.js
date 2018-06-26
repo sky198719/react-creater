@@ -1,21 +1,41 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
+import {login} from './../../../../js/common.js'
 import {alertboxAct} from './../../../../js/action/alertbox/index.js';
 import less from './index.less'
 import pic from './img/pic1.jpg';
 import Alertbox from './../../../../mui/alertbox/views/index.js';
 
 class Index extends React.Component{
-	handleClick(){
-		this.props.dispatch(alertboxAct('alertbox current'))
+	constructor(props){
+		super(props)
+		this.state = {
+			loginState : false
+		}
+	}
+	componentWillMount(){
+		const that = this
+		const logindata = login()
+		logindata.then(function(res){
+			that.setState({
+				loginState : res.loginState
+			})
+		})
+	}
+	handleClick = () => {
+		if(this.state.loginState){
+			this.props.dispatch(alertboxAct('alertbox current'))
+		}else{
+			alert('你还没登录没资格当码农')
+		}	
 	}
 	render(){
 		return(
 			<div>
 				<div className="index" id="mainCon" value="1">
 					<img src={pic} onClick={() => this.handleClick()} />
-					<Alertbox message="小明你好" />
+					<Alertbox />
 				</div>
 			</div>
 		)

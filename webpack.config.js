@@ -46,7 +46,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({  
+    new HtmlWebpackPlugin({
       filename: __dirname + '/dist/index.html',
       template: __dirname + '/src/template/index/index.html',
       chunks: ['index'],
@@ -62,9 +62,10 @@ module.exports = {
       chunks: ['form'],
     }),
     new CleanWebpackPlugin(  
-      ['dist/*', 'dist/*',],
+      ['dist'],
       {
         root: __dirname,
+        exclude:['json'],
         verbose: true,
         dry: false
       }  

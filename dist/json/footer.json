@@ -1,0 +1,28 @@
+{
+	"resultCode" : 0,
+	"message" : "系统通过",
+	"data" : {
+		"code" : 0,
+		"msg" : "成功",
+		"data" : {
+			"copyright" : "xxxxxxxxxxx",
+			"aboutus" : [
+				{
+					"title" : "关于我们"
+				},
+				{
+					"title" : "联系我们"
+				},
+				{
+					"title" : "合作团队"
+				},
+				{
+					"title" : "合作媒体"
+				},
+				{
+					"title" : "作品展示"
+				}
+			]
+		}
+	}
+}

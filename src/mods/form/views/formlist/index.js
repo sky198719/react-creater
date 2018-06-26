@@ -27,13 +27,13 @@ class Formlist extends React.Component{
 			currentId : document.getElementById('listCon').getAttribute('value')
 		})
 	}
-	handleMouseenter(e){
+	handleMouseenter = (e) => {
 		e.target.className = e.target.getAttribute('id') == this.state.currentId ? 'current hover' : 'hover'
 	}
-	handleMouseleave(e){
+	handleMouseleave = (e) => {
 		e.target.className = e.target.getAttribute('id') == this.state.currentId ? 'current' : ''
 	}
-	handleClick(e){
+	handleClick = (e) => {
 		this.setState({
 			currentId : e.target.getAttribute('id')
 		})

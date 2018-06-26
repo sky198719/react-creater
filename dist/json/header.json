@@ -1,0 +1,25 @@
+{
+	"resultCode" : 0,
+	"message" : "系统通过",
+	"data" : {
+		"code" : 0,
+		"msg" : "成功",
+		"data" : [
+			{
+				"title" : "首页",
+				"id" : "1",
+				"url" : "index.html"
+			},
+			{
+				"title" : "列表页",
+				"id" : "2",
+				"url" : "list.html"
+			},
+			{
+				"title" : "表单页",
+				"id" : "3",
+				"url" : "form.html"
+			}
+		]
+	}
+}
