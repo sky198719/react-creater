@@ -68,7 +68,7 @@ module.exports = {
         exclude:['json'],
         verbose: true,
         dry: false
-      }  
+      }
     )  
   ],
   devServer: {  
