@@ -2,10 +2,10 @@ import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import {login} from './../../../../js/common.js'
-import {alertboxAct} from './../../../../js/action/alertbox/index.js';
-import less from './index.less'
+import {alertboxAct} from './../../../../mui/alertbox/action';
+import './index.less'
 import pic from './img/pic1.jpg';
-import Alertbox from './../../../../mui/alertbox/views/index.js';
+import Alertbox from './../../../../mui/alertbox/views';
 
 class Index extends React.Component{
 	constructor(props){

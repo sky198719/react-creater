@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
-import less from './index.less';
+import './index.less';
 
 class Formfamily extends React.Component{
 	constructor(props){

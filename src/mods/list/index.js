@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './../common/header/views/index.js';
-import Footer from './../common/footer/views/index.js';
-import List from './views/list/index.js'
+import Header from './../common/header/views';
+import Footer from './../common/footer/views';
+import List from './views/list'
 
 ReactDOM.render(
 	(

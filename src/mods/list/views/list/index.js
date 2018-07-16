@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import less from './index.less';
+import './index.less';
 
 class List extends React.Component{
 	constructor(props){
@@ -12,30 +12,39 @@ class List extends React.Component{
 		}
 	}
 	componentWillMount(){
-		const that = this
-		const listdata = that.getListdata()
-		let array = []
-		listdata.then(function(res){
-			res.forEach(function(item,index){
-				array.push(<li key={index}><h2>{item.title}</h2><p>{item.info}</p><span>点击次数：<em value={item.id} onClick={(e) => that.handleClick(e)}>{item.click}</em></span></li>)
-			})
-			that.setState({
-				listArray : array
-			})
-		})
+		this.landingData('json/list.json')
 	}
-	getListdata = () => {
+	getData = (url) => {
 		return axios({
 			method : 'get',
-			url : '/json/list.json',
+			url : url,
 		})
 		.then((response) => response.data.data.data)
 		.catch(function(error){
 			console.log(error)
 		})
 	}
+	landingData = (url) => {
+		const that = this
+		const listdata = this.getData(url)
+		let array = []
+		listdata.then(function(res){
+			res.forEach(function(item,index){
+				array.push(<li key={index} onClick={(e) => that.handleClick(e)} onMouseEnter={(e) => that.handleMouseover(e)} onMouseLeave={(e) => that.handleMouseout(e)}><h2>{item.title}</h2><p>{item.info}</p><span>点击次数：<em value={item.id}>{item.click}</em></span></li>)
+			})
+			that.setState({
+				listArray : array
+			})
+		})
+	}
+	handleMouseover = (e) => {
+		e.currentTarget.className = 'current'
+	}
+	handleMouseout = (e) => {
+		e.currentTarget.className = ''
+	}
 	handleClick = (e) => {
-		console.log(e.target.getAttribute('value'))
+		console.log(e.target.innerHTML)
 	}
 	render(){
 		return(
@@ -43,6 +52,7 @@ class List extends React.Component{
 				<ul>
 					{this.state.listArray}
 				</ul>
+				<button onClick={() => this.landingData('json/list2.json')}>更新</button>
 			</div>
 		)
 	}

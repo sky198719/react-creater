@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
-import {alertboxAct,alertboxBg,alertboxMsg,alertboxInfo,alertboxFromre} from './../../../js/action/alertbox/index.js';
-import less from './index.less';
+import {alertboxAct,alertboxBg,alertboxMsg,alertboxInfo,alertboxFromre} from './../action';
+import './index.less';
 
 class Alertbox extends React.Component{
 	componentDidMount(){

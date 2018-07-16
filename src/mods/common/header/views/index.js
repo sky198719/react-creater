@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import {login} from './../../../../js/common.js'
-import less from './index.less';
+import './index.less';
 
 class Header extends React.Component{
 	constructor(props){
@@ -14,9 +14,27 @@ class Header extends React.Component{
 		}
 	}
 	componentWillMount(){
+		this.landingData()
+	}
+	componentDidMount(){
+		this.setState({
+			currentid : document.getElementById('mainCon').getAttribute('value')
+		})
+	}
+	getData = () => {
+		return axios({
+			method : 'get',
+			url : '/json/header.json',
+		})
+		.then((response) => response.data.data.data)
+		.catch(function(error){
+			console.log(error)
+		})
+	}
+	landingData = () => {
 		const that = this
 		const logindata = login()
-		const headerdata = that.getHeaderdata()
+		const headerdata = that.getData()
 		let array = []
 		let style = ''
 		logindata.then(function(res){
@@ -39,21 +57,6 @@ class Header extends React.Component{
 					headerArry : array
 				})
 			}
-		})
-	}
-	componentDidMount(){
-		this.setState({
-			currentid : document.getElementById('mainCon').getAttribute('value')
-		})
-	}
-	getHeaderdata = () => {
-		return axios({
-			method : 'get',
-			url : '/json/header.json',
-		})
-		.then((response) => response.data.data.data)
-		.catch(function(error){
-			console.log(error)
 		})
 	}
 	handleMouseenter = (e) => {

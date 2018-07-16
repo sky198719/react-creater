@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Link} from 'react-router-dom'
-import less from './index.less';
+import './index.less';
 
 class Formlist extends React.Component{
 	constructor(props){

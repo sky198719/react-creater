@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import {login} from './../../../../js/common.js';
-import less from './index.less';
+import './index.less';
 
 class Footer extends React.Component{
 	constructor(props){
@@ -13,8 +13,21 @@ class Footer extends React.Component{
 		}
 	}
 	componentWillMount(){
+		this.landingData()
+	}
+	getData = () => {
+		return axios({
+			method : 'get',
+			url : '/json/footer.json'
+		})
+		.then((response) => response.data.data.data)
+		.catch(function(error){
+			console.log(error)
+		})
+	}
+	landingData = () => {
 		const that = this
-		const footdata = that.getFooterdata()
+		const footdata = that.getData()
 		let array = []
 		footdata.then(function(res){
 			res.aboutus.forEach(function(item,index){
@@ -24,16 +37,6 @@ class Footer extends React.Component{
 				copyright : res.copyright,
 				footArray : array
 			})
-		})
-	}
-	getFooterdata = () => {
-		return axios({
-			method : 'get',
-			url : '/json/footer.json'
-		})
-		.then((response) => response.data.data.data)
-		.catch(function(error){
-			console.log(error)
 		})
 	}
 	render(){
