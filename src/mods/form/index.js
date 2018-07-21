@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import {HashRouter,Route} from 'react-router-dom'
 import Header from './../common/header/views';
 import Footer from './../common/footer/views';
-import Formlist from './views/formlist';
-import Formfamily from './views/formfamily';
-import Formwork from './views/formwork';
+import Formlist from './formlist/views';
+import Formfamily from './formfamily/views';
+import Formwork from './formwork/views';
+import './index.less';
 
 ReactDOM.render(
 	(

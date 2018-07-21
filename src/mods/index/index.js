@@ -4,7 +4,8 @@ import {Provider} from 'react-redux';
 import configureStore from './../../js/store.js';
 import Header from './../common/header/views';
 import Footer from './../common/footer/views';
-import Index from './views/home';
+import Index from './home/views';
+import './index.less';
 
 const store = configureStore()
 

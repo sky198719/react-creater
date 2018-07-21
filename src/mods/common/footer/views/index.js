@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import {login} from './../../../../js/common.js';
 import './index.less';

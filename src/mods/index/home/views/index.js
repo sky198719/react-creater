@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import {login} from './../../../../js/common.js'
 import {alertboxAct} from './../../../../mui/alertbox/action';
