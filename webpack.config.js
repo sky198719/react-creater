@@ -3,16 +3,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
+  // 打包正式环境
   mode: 'development',
+  // 配置多页面入口的接入js文件
   entry: {
     index: './src/mods/index/index.js',
     list: './src/mods/list/index.js',
     form: './src/mods/form/index.js'
   },
+  // 输出规则
   output: {
     path: __dirname + "/dist/",
     filename: 'static/js/[name]-[hash].js'
   },
+  // 编译
   module: {
     rules: [
       {
@@ -45,6 +49,7 @@ module.exports = {
       }
     ]
   },
+  // 配置多入口
   plugins: [
     new HtmlWebpackPlugin({
       filename: __dirname + '/dist/index.html',
@@ -61,7 +66,8 @@ module.exports = {
       template: __dirname + '/src/template/form/index.html',
       chunks: ['form'],
     }),
-    new CleanWebpackPlugin(  
+    // 打包
+    new CleanWebpackPlugin(
       ['dist'],
       {
         root: __dirname,
@@ -71,6 +77,7 @@ module.exports = {
       }
     )  
   ],
+  // 本地服务
   devServer: {  
     contentBase: "./dist/",  
     historyApiFallback: true,  
