@@ -4,8 +4,8 @@ import {login} from './../../../../js/common.js';
 import './index.less';
 
 class Footer extends React.Component{
-	constructor(props){
-		super(props)
+	constructor(){
+		super()
 		this.state = {
 			copyright : '',
 			footArray : []

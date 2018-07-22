@@ -1,10 +1,12 @@
 import React,{Component} from 'react';
-import {Link} from 'react-router-dom'
+import {Route,Link} from 'react-router-dom';
+import Formfamily from './../../formfamily/views';
+import Formwork from './../../formwork/views';
 import './index.less';
 
 class Formlist extends React.Component{
-	constructor(props){
-		super(props)
+	constructor(){
+		super()
 		this.state = {
 			data : [
 				{
@@ -50,7 +52,11 @@ class Formlist extends React.Component{
 				<ul className="formlist">
 					{dataArray}
 				</ul>
-				{this.props.children}
+				<div>
+					<Route exact path='/' component={Formfamily} />
+					<Route path="/family" component={Formfamily} />
+					<Route path="/work" component={Formwork} />
+				</div>
 			</div>
 		)
 	}

@@ -4,8 +4,8 @@ import {login} from './../../../../js/common.js'
 import './index.less';
 
 class Header extends React.Component{
-	constructor(props){
-		super(props)
+	constructor(){
+		super()
 		this.state = {
 			currentid : '',
 			loginState : false,

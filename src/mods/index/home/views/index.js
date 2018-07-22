@@ -7,8 +7,8 @@ import pic from './img/pic1.jpg';
 import Alertbox from './../../../../mui/alertbox/views';
 
 class Index extends React.Component{
-	constructor(props){
-		super(props)
+	constructor(){
+		super()
 		this.state = {
 			loginState : false
 		}

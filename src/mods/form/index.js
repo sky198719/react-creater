@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {HashRouter,Route} from 'react-router-dom'
+import {HashRouter} from 'react-router-dom'
 import Header from './../common/header/views';
 import Footer from './../common/footer/views';
 import Formlist from './formlist/views';
@@ -14,11 +14,7 @@ ReactDOM.render(
 			<Header />
 			<div className="list" id="mainCon" value="3">
 				<HashRouter>
-					<Formlist>
-						<Route exact path="/" component={Formfamily} />
-						<Route path="/family" component={Formfamily} />
-						<Route path="/work" component={Formwork} />
-					</Formlist>
+					<Formlist />
 				</HashRouter>
 			</div>
 			<Footer />

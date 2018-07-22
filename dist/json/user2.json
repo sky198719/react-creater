@@ -1,0 +1,12 @@
+{
+	"resultCode" : 0,
+	"message" : "系统成功",
+	"data" : {
+		"code" : 0,
+		"msg" : "业务成功",
+		"data" : {
+			"id" : 2,
+			"name" : "2222"
+		}
+	}
+}

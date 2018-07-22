@@ -3,8 +3,8 @@ import axios from 'axios';
 import './index.less';
 
 class List extends React.Component{
-	constructor(props){
-		super(props)
+	constructor(){
+		super()
 		this.state = {
 			articleid : 0,
 			listArray : []
@@ -29,7 +29,7 @@ class List extends React.Component{
 		let array = []
 		listdata.then(function(res){
 			res.forEach(function(item,index){
-				array.push(<li key={index} onClick={(e) => that.handleClick(e)} onMouseEnter={(e) => that.handleMouseover(e)} onMouseLeave={(e) => that.handleMouseout(e)}><h2>{item.title}</h2><p>{item.info}</p><span>点击次数：<em value={item.id}>{item.click}</em></span></li>)
+				array.push(<Listitem key={index} title={item.title} info={item.info} handleclick={(e) => that.handleClick(e)} handlemouseover={(e) => that.handleMouseover(e)} handlemouseout={(e) => that.handleMouseout(e)} />)	
 			})
 			that.setState({
 				listArray : array
@@ -53,6 +53,17 @@ class List extends React.Component{
 				</ul>
 				<button onClick={() => this.landingData('json/list2.json')}>更新</button>
 			</div>
+		)
+	}
+}
+
+class Listitem extends React.Component{
+	constructor(props){
+		super(props)
+	}
+	render(){
+		return(
+			<li onClick={this.props.handleclick} onMouseEnter={this.props.handlemouseover} onMouseLeave={this.props.handlemouseout}><h2>{this.props.title}</h2><p>{this.props.info}</p></li>
 		)
 	}
 }
